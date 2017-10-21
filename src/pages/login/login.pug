@@ -1,0 +1,20 @@
+ion-content(padding)
+    .background(style={ 'background-image': 'url(assets/images/login-background.jpg)' })
+        .b1-bg.color-red
+        .logo
+            //- img(src="assets/images/logo.png")
+    //- .background
+    //- .logo
+    //- ion-card
+        ion-list(no-margin, no-lines)
+            ion-item.flag
+                ion-label(ion-text, floating, color="light") UserName
+                ion-input(type="text", [(ngModel)]="user.username", color="light")
+
+            ion-item.flag
+                ion-label(ion-text, floating, color="light") Password
+                ion-input(type="text", [(ngModel)]="user.pass", color="light")
+    ion-list
+        ion-item
+            button(ion-button, block, (click)="login()", color="danger") Login with Google
+                ion-icon.icon-style(color="light", name="logo-googleplus")
