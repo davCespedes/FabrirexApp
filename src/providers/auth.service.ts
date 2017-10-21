@@ -15,7 +15,8 @@ export class AuthService {
             offline: true,
             webClientId: Constants.firebaseOpts.WEB_CLIENT_ID
         }).then(res => {
-            return firebase.auth().signInWithCredential(firebase.auth.GoogleAuthProvider.credential(res.idToken));
+            firebase.auth().signInWithCredential(firebase.auth.GoogleAuthProvider.credential(res.idToken));
+            return res;
         }).catch(err => console.log("Auth Service error: " + err));
     }
     logoutWithGooglePlus(): Promise<any> {

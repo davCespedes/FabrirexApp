@@ -15,7 +15,7 @@ export class LoginPage {
     login() {
         this._authSrv.loginWithGooglePlus()
             .then(googlePlusUser => {
-                this._navCtrl.setRoot(HomePage, JSON.stringify(googlePlusUser));
+                this._navCtrl.setRoot(HomePage, { googlePlusUser: googlePlusUser });
             })
             .catch(error => console.log("Error: " + error));
     }

@@ -9,5 +9,12 @@
 </ion-header>
 <ion-content padding="">
   <h3>Welcome To Fabrirex</h3>
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail item-start=""><img [src]="currentUser?.profileImage"></ion-thumbnail>
+      <h2>{{ currentUser?.firstName }} {{ currentUser?.lastName}}</h2>
+      <p>{{ currentUser?.email }}</p>
+    </ion-item>
+  </ion-list>
   <button ion-button menutoggle (click)="showToastr()">Show Toastr</button>
 </ion-content>

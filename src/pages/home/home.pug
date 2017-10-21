@@ -5,4 +5,10 @@ ion-header
         ion-title.title-style Fabrirex S.A.C.
 ion-content(padding='')
     h3 Welcome To Fabrirex
+    ion-list
+        ion-item
+            ion-thumbnail(item-start='')
+                img([src]='currentUser?.profileImage')
+            h2 {{ currentUser?.firstName }} {{ currentUser?.lastName}}
+            p {{ currentUser?.email }}
     button(ion-button, menutoggle, (click)="showToastr()") Show Toastr
