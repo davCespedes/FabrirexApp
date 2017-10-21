@@ -14,4 +14,9 @@ export class Constants {
             WEB_CLIENT_ID: '852493913575-8u94m15prfmdtiui5ghuhbqifmqrq050.apps.googleusercontent.com'
         }
     }
+    static get storage() {
+        return {
+            CURRENT_USER: 'current-user'
+        }
+    }
 }

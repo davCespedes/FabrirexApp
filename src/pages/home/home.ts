@@ -1,3 +1,4 @@
+import { IdentityService } from './../../providers/identity.service';
 import { IUser } from './../../interfaces/IUser';
 import { IGooglePlusResponse } from './../../interfaces/IGooglePlusResponse';
 import { NavController, MenuController, NavParams } from 'ionic-angular';
@@ -14,22 +15,15 @@ export class HomePage {
   constructor(
     private _navCtrl: NavController,
     private _navParams: NavParams,
-    private _toastrSrv: ToastrService
+    private _toastrSrv: ToastrService,
+    private _identitySrv: IdentityService
   ) { }
 
   ionViewWillEnter() {
-    this.currentUser = this._buildCurrentUser(this._navParams.get('googlePlusUser'));
-  }
-  private _buildCurrentUser(user: IGooglePlusResponse): IUser {
-    return {
-      _id: user.userId,
-      firstName: user.givenName,
-      lastName: user.familyName,
-      profileImage: user.imageUrl,
-      email: user.email
-    }
+    this.currentUser = this._identitySrv.user;
   }
   showToastr() {
     this._toastrSrv.show("This is a Toast Test");
   }
+
 }
