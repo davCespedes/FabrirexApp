@@ -1,0 +1,36 @@
+ion-header
+    ion-navbar
+        ion-title Sign In
+
+ion-content
+    ion-list(no-lines)
+            form([formGroup]="newUserForm")
+                ion-item
+                    ion-icon(color="light", name="ios-person-outline", item-start)
+                    ion-input(type="text", placeholder="Nombres", formControlName="firstName")
+
+                ion-item
+                    ion-icon(color="light", name="ios-person-outline", item-start)
+                    ion-input(type="text", placeholder="Apellidos", formControlName="lastName")
+                
+                ion-item
+                    ion-label Tipo de Usuario
+                    ion-select(formControlName="userType")
+                        ion-option(value="client") Cliente
+                        ion-option(value="employee") Empleado
+
+                ion-item
+                    ion-icon(color="light", name="ios-mail-outline", item-start)
+                    ion-input(type="email", placeholder="Email Address", formControlName="username")
+
+                ion-item
+                    ion-icon(color="light", name="ios-key-outline", item-start)
+                    ion-input(type="password", placeholder="Password", formControlName="password")
+
+                ion-item
+                    ion-icon(color="light", name="ios-key-outline", item-start)
+                    ion-input(type="password", placeholder="Confirm Password")
+
+                ion-row
+                    ion-col
+                        button(ion-button, round, block, color="primary", [disabled]="!newUserForm.valid", (click)="signIn()") Registrarme

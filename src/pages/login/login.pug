@@ -5,7 +5,7 @@ ion-content(padding)
             //- img(src="assets/images/logo.png")
     //- .background
     //- .logo
-    //- ion-card
+    ion-card
         ion-list(no-margin, no-lines)
             ion-item.flag
                 ion-label(ion-text, floating, color="light") UserName
@@ -13,8 +13,12 @@ ion-content(padding)
 
             ion-item.flag
                 ion-label(ion-text, floating, color="light") Password
-                ion-input(type="text", [(ngModel)]="user.pass", color="light")
+                ion-input(type="password", [(ngModel)]="user.password", color="light")
     ion-list
         ion-item
-            button(ion-button, block, (click)="login()", color="danger") Login with Google
+            button(ion-button, block, (click)="standarLogin()", color="primary") Login
+        ion-item
+            button(ion-button, block, (click)="loginWithGoogle()", color="danger") Login with Google
                 ion-icon.icon-style(color="light", name="logo-googleplus")
+        ion-item
+            ion-label((click)="signIn()") Sign In

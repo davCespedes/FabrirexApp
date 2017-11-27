@@ -8,6 +8,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { SqLiteService } from '../providers/sqLite.service';
 
 @Component({
   templateUrl: 'app.html'
@@ -25,7 +26,8 @@ export class MyApp {
     private _statusBar: StatusBar,
     private _splashScreen: SplashScreen,
     private _menuCtrl: MenuController,
-    private _identitySrv: IdentityService
+    private _identitySrv: IdentityService,
+    private _sqLiteSrv: SqLiteService
   ) {
     this.initializeApp();
 
@@ -44,6 +46,7 @@ export class MyApp {
       this._statusBar.styleDefault();
       this._splashScreen.hide();
       this._getAppUser();
+      this._createDatabase();
     });
   }
 
@@ -71,5 +74,12 @@ export class MyApp {
 
   private _setCurrentUser(user: IUser): void {
     if (user) this.currentUser = user;
+  }
+  private _createDatabase() {
+    this._sqLiteSrv.createDatabase()
+      .then(result => {
+        console.log("Database Created: " + result);
+      })
+      .catch(error => console.log(error));
   }
 }

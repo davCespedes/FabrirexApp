@@ -11,9 +11,10 @@
   <h3>Welcome To Fabrirex</h3>
   <ion-list>
     <ion-item>
-      <ion-thumbnail item-start=""><img [src]="currentUser?.profileImage"></ion-thumbnail>
+      <ion-thumbnail item-start=""><img [src]="currentUser?.profileImage || UNKNOW_USER_IMAGE"></ion-thumbnail>
       <h2>{{ currentUser?.firstName }} {{ currentUser?.lastName}}</h2>
       <p>{{ currentUser?.email }}</p>
+      <p>{{ currentUser?.userType }}</p>
     </ion-item>
   </ion-list>
   <button ion-button menutoggle (click)="showToastr()">Show Toastr</button>

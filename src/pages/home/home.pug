@@ -8,7 +8,15 @@ ion-content(padding='')
     ion-list
         ion-item
             ion-thumbnail(item-start='')
-                img([src]='currentUser?.profileImage')
+                img([src]='currentUser?.profileImage || UNKNOW_USER_IMAGE')
             h2 {{ currentUser?.firstName }} {{ currentUser?.lastName}}
             p {{ currentUser?.email }}
+            p {{ currentUser?.userType }}
     button(ion-button, menutoggle, (click)="showToastr()") Show Toastr
+    //- button(ion-button, menutoggle, (click)="getUsers()") Firebase Users Data
+    //- button(ion-button, menutoggle, (click)="_saveCurrentUser()") Save Current User
+
+    //- ion-list(*ngFor="let user of users")
+    //-     ion-item
+    //-         ion-label {{ user?._id }}
+    //-         h4 {{ user?.name }}

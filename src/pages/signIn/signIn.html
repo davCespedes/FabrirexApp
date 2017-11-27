@@ -1,0 +1,44 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Sign In</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list no-lines>
+    <form [formGroup]="newUserForm">
+      <ion-item>
+        <ion-icon color="light" name="ios-person-outline" item-start></ion-icon>
+        <ion-input type="text" placeholder="Nombres" formControlName="firstName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon color="light" name="ios-person-outline" item-start></ion-icon>
+        <ion-input type="text" placeholder="Apellidos" formControlName="lastName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Tipo de Usuario</ion-label>
+        <ion-select formControlName="userType">
+          <ion-option value="client">Cliente</ion-option>
+          <ion-option value="employee">Empleado</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-icon color="light" name="ios-mail-outline" item-start></ion-icon>
+        <ion-input type="email" placeholder="Email Address" formControlName="username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon color="light" name="ios-key-outline" item-start></ion-icon>
+        <ion-input type="password" placeholder="Password" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon color="light" name="ios-key-outline" item-start></ion-icon>
+        <ion-input type="password" placeholder="Confirm Password"></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <button ion-button round block color="primary" [disabled]="!newUserForm.valid" (click)="signIn()">Registrarme</button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+</ion-content>
