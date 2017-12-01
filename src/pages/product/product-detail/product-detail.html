@@ -1,0 +1,21 @@
+
+<ion-header no-border>
+  <ion-navbar color="primary">
+    <ion-title>{{ product?.description }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="card-background-page">
+  <div class="background" [ngStyle]="setBgImage()"></div>
+  <ion-card>
+    <div class="cs-fill" [ngStyle]="bgStyleFill()"></div>
+    <ion-item detail-none>
+      <ion-thumbnail item-left><img [src]="product?.image"></ion-thumbnail>
+      <p>Descripción:</p>
+      <h2>{{ product?.description }}</h2>
+    </ion-item>
+    <ion-card-content>
+      <h1 ion-text text-center color="primary">Precio: {{ product?.price }}</h1>
+      <h2 ion-text color="primary">Stock: {{ product?.stock }}</h2>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,6 +1,6 @@
 
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <button class="menu-button-style" ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -8,14 +8,8 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding="">
-  <h3>Welcome To Fabrirex</h3>
-  <ion-list>
-    <ion-item>
-      <ion-thumbnail item-start=""><img [src]="currentUser?.profileImage || UNKNOW_USER_IMAGE"></ion-thumbnail>
-      <h2>{{ currentUser?.firstName }} {{ currentUser?.lastName}}</h2>
-      <p>{{ currentUser?.email }}</p>
-      <p>{{ currentUser?.userType }}</p>
-    </ion-item>
-  </ion-list>
-  <button ion-button menutoggle (click)="showToastr()">Show Toastr</button>
+  <div class="div-style">
+    <button class="button-style" ion-button full color="primary">Solicitar Productos</button>
+  </div>
+  <cs-product-list [products]="products"></cs-product-list>
 </ion-content>

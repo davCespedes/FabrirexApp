@@ -16,7 +16,8 @@ export class Constants {
     }
     static get paths() {
         return {
-            UNKNOW_USER: 'assets/images/unknown-user.jpg'
+            UNKNOW_USER: 'assets/images/unknown-user.jpg',
+            FABRIREX_LOGO: 'assets/images/logo-fabrirex.png'
         }
     }
     static get storage() {

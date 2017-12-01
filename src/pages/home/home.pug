@@ -1,22 +1,9 @@
 ion-header
-    ion-navbar
+    ion-navbar(color="primary")
         button.menu-button-style(ion-button, menuToggle)
             ion-icon(name='menu')
         ion-title.title-style Fabrirex S.A.C.
 ion-content(padding='')
-    h3 Welcome To Fabrirex
-    ion-list
-        ion-item
-            ion-thumbnail(item-start='')
-                img([src]='currentUser?.profileImage || UNKNOW_USER_IMAGE')
-            h2 {{ currentUser?.firstName }} {{ currentUser?.lastName}}
-            p {{ currentUser?.email }}
-            p {{ currentUser?.userType }}
-    button(ion-button, menutoggle, (click)="showToastr()") Show Toastr
-    //- button(ion-button, menutoggle, (click)="getUsers()") Firebase Users Data
-    //- button(ion-button, menutoggle, (click)="_saveCurrentUser()") Save Current User
-
-    //- ion-list(*ngFor="let user of users")
-    //-     ion-item
-    //-         ion-label {{ user?._id }}
-    //-         h4 {{ user?.name }}
+    div.div-style
+        button.button-style(ion-button,full,color="primary") Solicitar Productos
+    cs-product-list([products]="products")

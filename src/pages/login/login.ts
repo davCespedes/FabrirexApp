@@ -1,3 +1,4 @@
+import { Constants } from './../../utils/Constants';
 import { IGooglePlusResponse } from './../../interfaces/IGooglePlusResponse';
 import { IUser } from './../../interfaces/IUser';
 import { IdentityService } from './../../providers/identity.service';
@@ -15,6 +16,7 @@ import { ToastrService } from '../../providers/toastr.service';
 })
 export class LoginPage {
     user: any = {};
+    FABRIREX_LOGO = Constants.paths.FABRIREX_LOGO;
     constructor(
         private _navCtrl: NavController,
         private _authSrv: AuthService,
@@ -30,6 +32,7 @@ export class LoginPage {
     }
 
     standarLogin() {
+        // this._navCtrl.setRoot(HomePage);
         this._sqLiteSrv.createDatabase()
             .then(db => {
                 console.log(db);
@@ -42,7 +45,7 @@ export class LoginPage {
                     this._navCtrl.setRoot(HomePage);
                 } else this._toastrSrv.show("Usuario no encontrado");
             })
-            .catch(error => console.log(error));
+            .catch(error => this._toastrSrv.show("Usuario no encontrado"));
     }
     loginWithGoogle() {
         // this._navCtrl.setRoot(HomePage);

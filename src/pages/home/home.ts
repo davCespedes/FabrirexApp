@@ -1,3 +1,5 @@
+import { IProducts } from './../../interfaces/IProducts';
+import { SqLiteService } from './../../providers/sqLite.service';
 import { FirebaseListObservable } from 'angularfire2/database-deprecated';
 import { Constants } from './../../utils/Constants';
 import { FirebaseService } from './../../providers/firebase.service';
@@ -19,15 +21,19 @@ export class HomePage {
   firebaseList: FirebaseListObservable<any>;
   users: any[];
   UNKNOW_USER_IMAGE = Constants.paths.UNKNOW_USER;
+  products: IProducts[] = [];
   constructor(
     private _navCtrl: NavController,
     private _navParams: NavParams,
     private _toastrSrv: ToastrService,
     private _identitySrv: IdentityService,
-    private _firebaseSrv: FirebaseService
+    private _firebaseSrv: FirebaseService,
+    private _sqLiteSrv: SqLiteService
   ) {
-    // this.currentUser = this._navParams.get("currentUser");
     this.currentUser = this._identitySrv.user;
+    this._getProducts();
+  }
+  ionViewWillEnter() {
   }
   showToastr() {
     this._toastrSrv.show("This is a Toast Example");
@@ -36,6 +42,19 @@ export class HomePage {
     return items.map(item => {
       return { [item.key]: item.val() };
     });
+  }
+
+  private _getProducts() {
+    let entity = Constants.entities.PRODUCTOS;
+    this._sqLiteSrv.createDatabase()
+      .then(db => this._sqLiteSrv.getDataByEntity(db, entity))
+      .then(productList => {
+        let tempList = [];
+        for (let i = 0; i < productList.rows.length; i++) {
+          tempList.push(productList.rows.item(i));
+        }
+        this.products = tempList;
+      })
   }
 
   private _saveCurrentUser() {

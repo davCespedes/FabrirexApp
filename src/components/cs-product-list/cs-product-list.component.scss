@@ -1,0 +1,137 @@
+cs-product-list {
+    masonry {
+        margin-bottom: 10px;
+    }
+    .card-md,
+    .card-ios {
+        width: 100%;
+    }
+    .cs-avatar-img {
+        position: relative;
+    }
+    .cs-premium-icon {
+        position: absolute;
+        right: -4px;
+        bottom: -4px;
+    }
+    .brick {
+        // width: 175px;
+        margin-top: 10px;
+        width: 48%;
+    }
+    .scroll-content {
+        margin-bottom: 40px;
+    }
+    .forsale {
+        ion-card {
+            img {
+                object-fit: cover;
+            }
+        }
+    }
+    .forsale {
+        ion-avatar {
+            img {
+                object-fit: cover;
+                width: 2.9rem !important;
+                height: 2.9rem !important;
+            }
+        }
+        .popover {
+            margin: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            ion-icon {
+                font-size: 3rem;
+                color: black
+            }
+        }
+        .item-md ion-avatar {
+            min-width: auto;
+            min-height: auto;
+        }
+        .item-ios ion-avatar {
+            min-height: auto;
+        }
+        .backimage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+        .img {
+            box-sizing: border-box;
+            display: inline-block;
+            width: 100%;
+            position: relative;
+            height: 0;
+            padding-top: 100%;
+            h3 {
+                background-color: rgba(0, 0, 0, .5);
+                font-size: 2rem;
+                color: mediumspringgreen;
+                height: 35px;
+                line-height: 35px;
+                bottom: 0;
+                left: 0;
+                text-align: center;
+                width: 100%;
+                right: 0;
+                position: absolute;
+                margin: 0 !important;
+            }
+        }
+        .item-md {
+            h2 {
+                font-size: 1.3rem;
+            }
+            p {
+                font-size: 1.2rem;
+            }
+        }
+        ion-item {
+            padding-left: 8px;
+        }
+        ion-card {
+            ion-card-content {
+                padding: 0 8px;
+            }
+            h3 {
+                font-size: 1.7rem;
+                font-weight: bold;
+            }
+            h4 {
+                margin: 2px 0;
+                color: grey !important;
+                span {
+                    padding-left: 4px;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+        ion-card-title {
+            h2 {
+                font-weight: bold;
+                font-size: 1.5rem;
+            }
+            p {
+                font-size: 1.1rem;
+            }
+        }
+        .card-md {
+            margin: 0;
+        }
+        .footer-avatar {
+            .label-md {
+                margin: 9px 8px 9px 0;
+            }
+        }
+    }
+}

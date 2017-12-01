@@ -1,0 +1,22 @@
+ion-header(no-border)
+	ion-navbar(color="primary")
+		ion-title {{ product?.description }}
+
+ion-content.card-background-page
+	.background([ngStyle]="setBgImage()")
+	ion-card
+		.cs-fill([ngStyle]="bgStyleFill()")
+		ion-item(detail-none)
+			ion-thumbnail(item-left)
+				img([src]="product?.image")
+			p Descripción:
+			h2 {{ product?.description }}
+		ion-card-content
+			h1(ion-text, text-center color="primary") Precio: {{ product?.price }}
+			h2(ion-text, color="primary") Stock: {{ product?.stock }}
+
+			//- .card-subtitle test
+			//- .card-subtitle test
+
+		//- ion-row(*ngIf="mode == 'sent'",paddind-top)
+			button.button-orange(ion-button, color="energized", (click)="updateRewardStatus(rewardStatus.DONE)") Set As Used

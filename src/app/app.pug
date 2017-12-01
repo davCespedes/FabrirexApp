@@ -1,9 +1,15 @@
 ion-menu([content]='content')
     ion-header
-        ion-toolbar
-            ion-title Menu
+        ion-toolbar(color="primary")
+            ion-title Bienvenido a Fabrirex {{ currentUser?.firstName }}
     ion-content
         ion-list
+            ion-item
+                ion-thumbnail(item-start='')
+                    img([src]='currentUser?.profileImage || UNKNOW_USER_IMAGE')
+                h2 {{ currentUser?.firstName }} {{ currentUser?.lastName}}
+                p {{ currentUser?.username }}
+            
             button(menuclose='', ion-item='', *ngFor='let p of pages', (click)='openPage(p)')
                 | {{p.title}}
 //- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus

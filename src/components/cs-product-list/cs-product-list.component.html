@@ -1,0 +1,17 @@
+
+<div class="forsale">
+  <masonry [options]="{ gutter: 10, resize : true }">
+    <masonry-brick class="brick" *ngFor="let product of products">
+      <ion-card (click)="viewProduct(product)">
+        <div class="img"><i class="backimage" [ngStyle]="bgStyle(product?.image)"></i>
+          <h3>s./ {{ product?.price }}</h3>
+        </div>
+        <ion-card-content>
+          <ion-card-title>
+            <h2>{{ product?.description }}</h2>
+          </ion-card-title>
+        </ion-card-content>
+      </ion-card>
+    </masonry-brick>
+  </masonry>
+</div>
