@@ -11,6 +11,12 @@ login-page {
         background-position: center center;
         z-index: 0;
     }
+    .mg-top {
+        margin-top: 21%;
+    }
+    .text-input {
+        color: #F7B027
+    }
     .b1-bg {
         position: absolute;
         width: 100%;
@@ -53,6 +59,8 @@ login-page {
         text-align: center;
     }
     .img-style {
-        position: relative;
+        position: absolute;
+        width: 79%;
+        margin: 21px 0;
     }
 }
