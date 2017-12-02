@@ -5,5 +5,5 @@ ion-header
         ion-title.title-style Fabrirex S.A.C.
 ion-content(padding='')
     div.div-style
-        button.button-style(ion-button,full,color="primary") Solicitar Productos
-    cs-product-list([products]="products")
+        button.button-style((click)="goToRequest()", ion-button,full,color="primary") Solicitar Productos
+    //- cs-product-list([products]="products")

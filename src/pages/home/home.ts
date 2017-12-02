@@ -10,6 +10,7 @@ import { NavController, MenuController, NavParams } from 'ionic-angular';
 import { Component } from '@angular/core';
 
 import { ToastrService } from './../../providers/toastr.service';
+import { RequestPage } from '../request/request';
 
 @Component({
   selector: 'page-home',
@@ -35,8 +36,8 @@ export class HomePage {
   }
   ionViewWillEnter() {
   }
-  showToastr() {
-    this._toastrSrv.show("This is a Toast Example");
+  goToRequest() {
+    this._navCtrl.push(RequestPage);
   }
   private _formatFireBaseData(items: any[]): any[] {
     return items.map(item => {

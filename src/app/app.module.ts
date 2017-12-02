@@ -19,6 +19,7 @@ import { SignInPage } from '../pages/signIn/signIn';
 
 
 import { CsProductListComponent } from '../components/cs-product-list/cs-product-list.component';
+import { RequestPage } from '../pages/request/request';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CsProductListComponent } from '../components/cs-product-list/cs-product
     LoginPage,
     SignInPage,
     ProductDetailPage,
+    RequestPage,
     //components
     CsProductListComponent
   ],
@@ -48,6 +50,7 @@ import { CsProductListComponent } from '../components/cs-product-list/cs-product
     LoginPage,
     SignInPage,
     ProductDetailPage,
+    RequestPage,
     //components
     CsProductListComponent
   ],

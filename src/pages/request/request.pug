@@ -1,0 +1,29 @@
+ion-header
+  ion-navbar
+    ion-title DateTime
+ion-content.outer-content
+  ion-list
+    ion-item
+      ion-input(placeholder='Title')
+    ion-item
+      ion-input(placeholder='Location')
+  ion-list
+    ion-item
+      ion-label Start Date
+      ion-datetime(displayformat='MMM DD YYYY', [(ngmodel)]='event.month')
+    ion-item
+      ion-label Start Time
+      ion-datetime(displayformat='h:mm A', pickerformat='h mm A', [(ngmodel)]='event.timeStarts')
+    ion-item
+      ion-label Ends
+      ion-datetime(displayformat='MMM DD YYYY', [(ngmodel)]='event.timeEnds')
+    button(ion-item='')
+      ion-label Repeat
+      ion-note(item-end='') Never
+    button(ion-item='')
+      ion-label Travel Time
+      ion-note(item-end='') None
+  ion-list
+    button(ion-item='')
+      ion-label Alert
+      ion-note(item-end='') None
