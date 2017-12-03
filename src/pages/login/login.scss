@@ -1,6 +1,7 @@
 login-page {
     .background {
         position: absolute;
+        opacity: 0.85;
         top: 0;
         left: 0;
         right: 0;
@@ -10,6 +11,7 @@ login-page {
         background-size: cover;
         background-position: center center;
         z-index: 0;
+        
     }
     .mg-top {
         margin-top: 21%;
