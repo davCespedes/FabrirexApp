@@ -20,7 +20,6 @@ export class SqLiteService {
         let entities = Constants.entities;
         switch (entity) {
             case entities.USUARIOS: return db.executeSql(sqlQuery, [item.firstName, item.lastName, item.userType, item.username, item.password]);
-            // case entities.EMPLEADOS: return db.executeSql(sqlQuery, [item.firstName, item.lastName, item.profileImage, item.username, item.password]);
             case entities.PRODUCTOS: return db.executeSql(sqlQuery, [item.description, item.stock, item.price, item.image]);
             case entities.SOLICITUDES: return db.executeSql(sqlQuery, [item.clientId, item.employeeId, item.destination, item.date]);
             case entities.DETALLES_SOLICITUDES: return db.executeSql(sqlQuery, [item.requestId, item.productId, item.quantity, item.total]);
