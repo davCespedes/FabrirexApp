@@ -8,26 +8,26 @@
   <ion-card class="mg-top">
     <ion-list no-margin no-lines>
       <ion-item class="flag">
-        <ion-label ion-text floating color="light">UserName</ion-label>
+        <ion-label ion-text floating color="light">Usuario</ion-label>
         <ion-input type="text" [(ngModel)]="user.username" color="light"></ion-input>
       </ion-item>
       <ion-item class="flag">
-        <ion-label ion-text floating color="light">Password</ion-label>
+        <ion-label ion-text floating color="light">Contraseña</ion-label>
         <ion-input type="password" [(ngModel)]="user.password" color="light"></ion-input>
       </ion-item>
     </ion-list>
   </ion-card>
   <ion-list>
     <ion-item>
-      <button ion-button block (click)="standarLogin()" color="primary">Login</button>
+      <button ion-button block (click)="standarLogin()" color="primary">Iniciar Sesión</button>
     </ion-item>
     <ion-item>
-      <button ion-button block (click)="loginWithGoogle()" color="danger">Login with Google
+      <button ion-button block (click)="loginWithGoogle()" color="danger">Iniciar Sesión con Google
         <ion-icon class="icon-style" color="light" name="logo-googleplus"></ion-icon>
       </button>
     </ion-item>
-    <ion-item>
-      <ion-label (click)="signIn()">Sign In</ion-label>
+    <ion-item class="item-style">
+      <ion-label (click)="signIn()">Registrate</ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

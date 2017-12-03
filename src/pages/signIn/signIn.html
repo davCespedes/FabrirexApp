@@ -1,10 +1,11 @@
 
 <ion-header>
-  <ion-navbar>
-    <ion-title>Sign In</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Únete a Fabrirex</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content>
+  <div class="div-style"><img class="img-style" [src]="FABRIREX_LOGO"></div>
   <ion-list no-lines>
     <form [formGroup]="newUserForm">
       <ion-item>
@@ -34,11 +35,11 @@
         <ion-icon color="light" name="ios-key-outline" item-start></ion-icon>
         <ion-input type="password" placeholder="Confirm Password"></ion-input>
       </ion-item>
-      <ion-row>
-        <ion-col>
-          <button class="btn-reg" ion-button round block color="primary" [disabled]="!newUserForm.valid" (click)="signIn()">Registrarme</button>
-        </ion-col>
-      </ion-row>
     </form>
   </ion-list>
 </ion-content>
+<ion-footer no-shadow (click)="signIn()">
+  <ion-toolbar position="bottom">
+    <button ion-button round full color="primary" [disabled]="!newUserForm.valid">Registrarme</button>
+  </ion-toolbar>
+</ion-footer>

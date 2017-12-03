@@ -14,6 +14,7 @@ import { HomePage } from '../home/home';
 })
 export class SignInPage {
     newUserForm: FormGroup;
+    FABRIREX_LOGO = Constants.paths.FABRIREX_LOGO;
     constructor(
         private _formBuilder: FormBuilder,
         private _sqLiteSrv: SqLiteService,

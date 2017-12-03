@@ -1,29 +1,32 @@
 signin-page {
-/*HEADER*/
+    /*HEADER*/
     .toolbar-background {
-        background: #8AF1DB;
+        // background: #8AF1DB;
     }
-    .ion-md-arrow-back:before,
-    .toolbar-title-md {
-        color: #18658B;
+    .div-style {
+        text-align: center;
     }
+    .img-style {
+        width: 79%;
+        margin: 14px 0 14px 5%;
+    } // .ion-md-arrow-back:before,
+    // .toolbar-title-md {
+    //     color: #18658B;
+    // }
     .ion-ios-person-outline:before,
     .ion-ios-mail-outline:before,
-    .ion-ios-key-outline:before
-     {
-        color: #0196A0;
-    }
-    .button-md-primary {
-        background: #5A9DBE;
-    }
-    .btn-reg {
-        width: 63%;
-        margin-top: 5%;
-        margin-left: 16%;
-        height: 42px;
-    }
+    .ion-ios-key-outline:before {
+        color: #b22222;
+    } // .button-md-primary {
+    //     background: #5A9DBE;
+    // }
+    // .btn-reg {
+    //     width: 63%;
+    //     margin-top: 5%;
+    //     margin-left: 16%;
+    //     height: 42px;
+    // }
     signin-page .button-md-primary {
-        background: rgb(138, 241, 219)!important;
+        // background: rgb(138, 241, 219)!important;
     }
-    
 }

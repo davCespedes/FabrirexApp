@@ -12,6 +12,6 @@ ion-menu([content]='content')
             
             button(menuClose, ion-item='', *ngFor='let p of pages', (click)='openPage(p)')
                 | {{p.title}}
-            button(menuclose='',ion-item='',(click)="logout()") Logout
+            button(menuClose='',ion-item='',(click)="logout()") Salir
 //- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus
 ion-nav([root]='rootPage', #content='', swipebackenabled='false')
