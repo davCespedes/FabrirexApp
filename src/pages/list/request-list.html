@@ -9,9 +9,9 @@
 </ion-header>
 <ion-content>
   <cs-empty-page *ngIf="requestList.length == 0" [entity]="entity"></cs-empty-page>
-  <ion-list *ngFor="let request of requestList;let i= index">
+  <ion-list>
     <ion-list-header>Solicitudes Realizadas</ion-list-header>
-    <ion-item>Solicitud {{ i + 1 }}
+    <ion-item *ngFor="let request of requestList;let i= index">Solicitud {{ i + 1 }}
       <ion-note item-end>{{ request?.date| date:'shortTime' }}</ion-note>
       <ion-icon name="checkmark-circle" item-end color="danger"></ion-icon>
     </ion-item>
