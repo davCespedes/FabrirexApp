@@ -32,20 +32,20 @@ export class LoginPage {
     }
 
     standarLogin() {
-        // this._navCtrl.setRoot(HomePage);
-        this._sqLiteSrv.createDatabase()
-            .then(db => {
-                console.log(db);
-                return this._sqLiteSrv.getSessionUserData(db, this.user);
-            })
-            .then((user: any) => {
-                if (user) {
-                    let currentUser = this._buildCurrentUser(user.rows.item(0));
-                    this._identitySrv.user = currentUser;
-                    this._navCtrl.setRoot(HomePage);
-                } else this._toastrSrv.show("Usuario no encontrado");
-            })
-            .catch(error => this._toastrSrv.show("Usuario no encontrado"));
+        this._navCtrl.setRoot(HomePage);
+        // this._sqLiteSrv.createDatabase()
+        //     .then(db => {
+        //         console.log(db);
+        //         return this._sqLiteSrv.getSessionUserData(db, this.user);
+        //     })
+        //     .then((user: any) => {
+        //         if (user) {
+        //             let currentUser = this._buildCurrentUser(user.rows.item(0));
+        //             this._identitySrv.user = currentUser;
+        //             this._navCtrl.setRoot(HomePage);
+        //         } else this._toastrSrv.show("Usuario no encontrado");
+        //     })
+        //     .catch(error => this._toastrSrv.show("Usuario no encontrado"));
     }
     loginWithGoogle() {
         // this._navCtrl.setRoot(HomePage);

@@ -9,7 +9,7 @@
 </ion-header>
 <ion-content>
   <cs-empty-page *ngIf="requestList.length == 0" [entity]="entity"></cs-empty-page>
-  <ion-list>
+  <ion-list *ngIf="requestList.length &gt; 0">
     <ion-list-header>Solicitudes Realizadas</ion-list-header>
     <ion-item *ngFor="let request of requestList;let i= index">Solicitud {{ i + 1 }}
       <ion-note item-end>{{ request?.date| date:'shortTime' }}</ion-note>
