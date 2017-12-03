@@ -1,6 +1,7 @@
 login-page {
     .background {
         position: absolute;
+        opacity: 0.85;
         top: 0;
         left: 0;
         right: 0;
@@ -10,12 +11,16 @@ login-page {
         background-size: cover;
         background-position: center center;
         z-index: 0;
+        
     }
     .mg-top {
         margin-top: 21%;
     }
     .text-input {
         color: #F7B027
+    }
+    .item-inner {
+        border-bottom: none!important;
     }
     .b1-bg {
         position: absolute;
@@ -25,7 +30,7 @@ login-page {
         pointer-events: none;
     }
     .b1-bg.color-red {
-        background: rgba(228, 77, 0, 0.5);
+        background: rgba(222, 135, 92, 0.5)
     }
     .flag {
         [item-left] {
@@ -37,7 +42,8 @@ login-page {
         // padding-left: 8px;
         position: relative;
         background: transparent;
-        color: white;
+        color: #8AF1DB;
+        font-weight: 500;
     }
     .logo {
         position: relative;
@@ -61,6 +67,13 @@ login-page {
     .img-style {
         position: absolute;
         width: 79%;
-        margin: 21px 0;
+        margin: 14px 0 14px 5%;
+    }   
+    #lbl-7 {
+        text-decoration: underline;
     }
+    .list-md .item-input:last-child {
+        border-bottom: none;
+    }
+
 }
