@@ -63,7 +63,7 @@ export class RequestPage {
             .then(request => {
                 if (request) this._saveRequestDetail(request.rows.item(0));
                 this._toastSrv.show("Solicitud Almacenada Correctamente");
-                this._navCtrl.setRoot(HomePage);
+                this._navCtrl.setRoot(HomePage).then(() => this.selectedProducts = []);
                 // this._viewCtrl.dismiss();
             })
             .catch(err => console.log(err));
