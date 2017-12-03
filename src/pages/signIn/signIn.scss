@@ -1,1 +1,26 @@
-signin-page {}
+signin-page {
+/*HEADER*/
+    .toolbar-background {
+        background: #8AF1DB;
+    }
+    .ion-md-arrow-back:before,
+    .toolbar-title-md {
+        color: #18658B;
+    }
+    .ion-ios-person-outline:before,
+    .ion-ios-mail-outline:before,
+    .ion-ios-key-outline:before
+     {
+        color: #0196A0;
+    }
+    .button-md-primary {
+        background: #5A9DBE;
+    }
+    .btn-rg {
+        width: 63%;
+        margin-top: 5%;
+        margin-left: 16%;
+        height: 42px;
+    }
+    
+}

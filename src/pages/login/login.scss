@@ -17,6 +17,9 @@ login-page {
     .text-input {
         color: #F7B027
     }
+    .item-inner {
+        border-bottom: none!important;
+    }
     .b1-bg {
         position: absolute;
         width: 100%;
@@ -37,7 +40,8 @@ login-page {
         // padding-left: 8px;
         position: relative;
         background: transparent;
-        color: white;
+        color: #8AF1DB;
+        font-weight: 500;
     }
     .logo {
         position: relative;
@@ -61,6 +65,13 @@ login-page {
     .img-style {
         position: absolute;
         width: 79%;
-        margin: 21px 0;
+        margin: 14px 0 14px 5%;
+    }   
+    #lbl-7 {
+        text-decoration: underline;
     }
+    .list-md .item-input:last-child {
+        border-bottom: none;
+    }
+
 }
