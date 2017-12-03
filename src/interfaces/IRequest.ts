@@ -4,4 +4,5 @@ export interface IRequest {
     employeeId: string;//FK
     destination: string;
     date: string;
+    total:number;
 }

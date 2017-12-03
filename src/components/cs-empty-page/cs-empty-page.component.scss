@@ -1,0 +1,26 @@
+cs-empty-page {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: white;
+    height: 70vh;
+    .card-md,
+    .card-ios {
+        margin: 0;
+        padding: 10% 5%;
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        h2 {
+            max-width: 300px;
+            margin: auto;
+        }
+    }
+    ion-card {
+        img {
+            max-width: 100px;
+            margin: auto;
+        }
+    }
+}

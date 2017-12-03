@@ -3,6 +3,6 @@ export interface IRequestDetail {
     requestId: string;//FK
     productId: string;//FK
     quantity: number;
-    total: number;
+    subTotal: number;
 
 }

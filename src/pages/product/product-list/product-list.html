@@ -1,0 +1,14 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons end>
+      <button ion-button="" icon-only="" (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Productos Fabrirex</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding="">
+  <cs-product-list (productsEmitter)="setProducts($event)" [products]="products" [request]="request"></cs-product-list>
+</ion-content>

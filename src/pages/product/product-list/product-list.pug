@@ -1,0 +1,8 @@
+ion-header
+    ion-navbar(color="primary")
+        ion-buttons(end)
+            button(ion-button='', icon-only='', (click)='close()')
+                ion-icon(name='close')
+        ion-title Productos Fabrirex
+ion-content(padding='')
+    cs-product-list((productsEmitter)="setProducts($event)", [products]="products", [request]="request")

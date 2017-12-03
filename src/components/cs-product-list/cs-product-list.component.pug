@@ -1,13 +1,13 @@
 .forsale
-	//- cs-empty-page(*ngIf="sales && !sales.length", [entity]="entity")
-
 	masonry([options]="{ gutter: 10, resize : true }")
 		masonry-brick.brick(*ngFor="let product of products")
-			ion-card((click)= "viewProduct(product)")
-				.img
+			ion-card
+				.img((click)= "viewProduct(product)")
 					i.backimage([ngStyle]="bgStyle(product?.image)")
 					h3 s./ {{ product?.price }}
 
 				ion-card-content
-					ion-card-title
+					ion-card-title((click)= "viewProduct(product)")
 						h2 {{ product?.description }}
+					button(*ngIf="request", ion-button, full, color="primary", (click)="addProduct(product)") Solicitar
+						ion-icon(color="light", name="basket")

@@ -12,7 +12,8 @@
         <h2>{{ currentUser?.firstName }} {{ currentUser?.lastName}}</h2>
         <p>{{ currentUser?.username }}</p>
       </ion-item>
-      <button menuclose="" ion-item="" *ngFor="let p of pages" (click)="openPage(p)">{{p.title}}</button>
+      <button menuClose ion-item="" *ngFor="let p of pages" (click)="openPage(p)">{{p.title}}</button>
+      <button menuclose="" ion-item="" (click)="logout()">Logout</button>
     </ion-list>
   </ion-content>
 </ion-menu>

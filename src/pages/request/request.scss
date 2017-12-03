@@ -1,1 +1,11 @@
-request-page {}
+request-page {
+    .text-input[disabled],
+    .text-input {
+        text-align: right;
+    }
+    .button-style {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}

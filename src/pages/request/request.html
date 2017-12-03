@@ -1,0 +1,52 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Pedidos Fabrirex S.A.C.</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding="">
+  <ion-list>
+    <ion-item>
+      <ion-label>Fecha:</ion-label>
+      <ion-datetime displayformat="MMM DD YYYY" [(ngModel)]="currentDate"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-label>Cliente:</ion-label>
+      <ion-input [(ngModel)]="currentUser.completeName" disabled="true"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-label>Destino:</ion-label>
+      <ion-input [(ngModel)]="destiny" placeholder="Ingrese destino"></ion-input>
+    </ion-item>
+    <button ion-item="" (click)="goToProductList()">
+      <ion-label>Seleccionar Productos</ion-label>
+    </button>
+  </ion-list>
+  <ion-list *ngIf="selectedProducts.length">
+    <ion-list-header>Productos Seleccionados</ion-list-header>
+    <ion-item *ngFor="let selectedProduct of selectedProducts">
+      <ion-avatar item-start=""><img [src]="selectedProduct.product?.image"></ion-avatar>
+      <h2>{{ selectedProduct.product?.description }}</h2>
+      <p>Cantidad: {{ selectedProduct?.quantity }} </p>
+      <p>SubTotal: s/. {{ selectedProduct?.subTotal}}</p>
+      <button class="button-style" ion-button icon-only clear (click)="removeProduct(selectedProduct)">
+        <ion-icon name="trash" color="danger"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="selectedProducts.length">
+    <ion-item>
+      <ion-label>Total:</ion-label>
+      <ion-input disabled="true" [(ngModel)]="total"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer *ngIf="selectedProducts.length" no-shadow="" (click)="saveRequest()">
+  <ion-toolbar position="bottom">
+    <button ion-button full color="primary">Solicitar Productos</button>
+  </ion-toolbar>
+</ion-footer>

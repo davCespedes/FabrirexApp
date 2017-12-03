@@ -9,7 +9,7 @@
 </ion-header>
 <ion-content padding="">
   <div class="div-style">
-    <button class="button-style" ion-button full color="primary">Solicitar Productos</button>
+    <button class="button-style" (click)="goToRequest()" ion-button full color="primary">Solicitar Productos</button>
   </div>
   <cs-product-list [products]="products"></cs-product-list>
 </ion-content>

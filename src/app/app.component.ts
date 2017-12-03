@@ -3,12 +3,12 @@ import { IUser } from './../interfaces/IUser';
 import { IdentityService } from './../providers/identity.service';
 import { LoginPage } from './../pages/login/login';
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform, MenuController } from 'ionic-angular';
+import { Nav, Platform, MenuController, NavController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import { RequestListPage } from '../pages/list/request-list';
 import { SqLiteService } from '../providers/sqLite.service';
 import { Constants } from '../utils/Constants';
 import { IProducts } from '../interfaces/IProducts';
@@ -30,22 +30,21 @@ export class MyApp {
     private _splashScreen: SplashScreen,
     private _menuCtrl: MenuController,
     private _identitySrv: IdentityService,
-    private _sqLiteSrv: SqLiteService
+    private _sqLiteSrv: SqLiteService,
+    // private _navCtrl: NavController
   ) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Inicio', component: HomePage },
+      { title: 'Solicitudes Realizadas', component: RequestListPage }
     ];
 
   }
 
   initializeApp() {
     this._platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       this._statusBar.styleDefault();
       this._splashScreen.hide();
       this._getAppUser();
@@ -54,10 +53,10 @@ export class MyApp {
   }
 
   openPage(page) {
-    // Reset the content nav to have just this page
-    // we wouldn't want the back button to show in this scenario
-    console.log(this.currentUser);
     this.nav.setRoot(page.component);
+  }
+  logout() {
+    this.nav.setRoot(LoginPage);
   }
   private _getAppUser() {
     this._identitySrv.getCurrentUser()
@@ -79,8 +78,13 @@ export class MyApp {
     if (user) this.currentUser = user;
   }
   private _createDatabase() {
+    let dbInstance;
     this._sqLiteSrv.createDatabase()
-      .then(db => this._createProducts(db))
+      .then(db => {
+        dbInstance = db;
+        return this._createProducts(db);
+      })
+      .then(() => this._createEmployee(dbInstance))
       .then(result => console.log("Database Created: " + result))
       .catch(error => console.log(error));
   }
@@ -95,6 +99,18 @@ export class MyApp {
           productList.forEach(product => {
             return this._sqLiteSrv.save(databaseInstance, product, entity);
           });
+        }
+      })
+      .catch(error => console.log(error));
+  }
+  private _createEmployee(db: SQLiteObject) {
+    let databaseInstance = db;
+    let entity = Constants.entities.USUARIOS;
+    return this._sqLiteSrv.createTable(databaseInstance, entity)
+      .then(table => {
+        let employee = this._buildEmployee();
+        if (table) {
+          return this._sqLiteSrv.save(databaseInstance, employee, entity);
         }
       })
       .catch(error => console.log(error));
@@ -151,5 +167,14 @@ export class MyApp {
       price: 2.10,
       image: "assets/products/pastelero-liso-raya.jpg"
     }];
+  }
+  private _buildEmployee() {
+    return {
+      firstName: "Pepe",
+      lastName: "Grillo",
+      userType: "employee",
+      username: "pepe@mail.com",
+      password: "123456"
+    }
   }
 }

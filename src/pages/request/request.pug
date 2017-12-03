@@ -1,29 +1,36 @@
 ion-header
-  ion-navbar
-    ion-title DateTime
-ion-content.outer-content
-  ion-list
-    ion-item
-      ion-input(placeholder='Title')
-    ion-item
-      ion-input(placeholder='Location')
-  ion-list
-    ion-item
-      ion-label Start Date
-      ion-datetime(displayformat='MMM DD YYYY', [(ngmodel)]='event.month')
-    ion-item
-      ion-label Start Time
-      ion-datetime(displayformat='h:mm A', pickerformat='h mm A', [(ngmodel)]='event.timeStarts')
-    ion-item
-      ion-label Ends
-      ion-datetime(displayformat='MMM DD YYYY', [(ngmodel)]='event.timeEnds')
-    button(ion-item='')
-      ion-label Repeat
-      ion-note(item-end='') Never
-    button(ion-item='')
-      ion-label Travel Time
-      ion-note(item-end='') None
-  ion-list
-    button(ion-item='')
-      ion-label Alert
-      ion-note(item-end='') None
+  ion-navbar(color="primary")
+    ion-title Pedidos Fabrirex S.A.C.
+ion-content(padding='')
+    ion-list
+        ion-item
+            ion-label Fecha:
+            ion-datetime(displayformat='MMM DD YYYY', [(ngModel)]='currentDate')
+    ion-list
+        ion-item
+            ion-label Cliente:
+            ion-input([(ngModel)]="currentUser.completeName", disabled= "true")
+    ion-list
+        ion-item
+            ion-label Destino:
+            ion-input([(ngModel)]="destiny", placeholder='Ingrese destino')
+        button(ion-item='', (click)="goToProductList()")
+            ion-label Seleccionar Productos
+            //- ion-note(item-end='') Ver mas
+    ion-list(*ngIf="selectedProducts.length")
+        ion-list-header Productos Seleccionados
+        ion-item(*ngFor="let selectedProduct of selectedProducts")
+            ion-avatar(item-start='')
+                img([src]='selectedProduct.product?.image')
+            h2 {{ selectedProduct.product?.description }}
+            p Cantidad: {{ selectedProduct?.quantity }} 
+            p SubTotal: s/. {{ selectedProduct?.subTotal}}
+            button.button-style(ion-button, icon-only,clear, (click)="removeProduct(selectedProduct)")
+                ion-icon(name="trash", color="danger")
+    ion-list(*ngIf="selectedProducts.length")
+        ion-item
+            ion-label Total:
+            ion-input(disabled="true", [(ngModel)]="total")
+ion-footer(*ngIf="selectedProducts.length",no-shadow='', (click)="saveRequest()")
+    ion-toolbar(position='bottom')
+        button(ion-button, full, color="primary") Solicitar Productos
